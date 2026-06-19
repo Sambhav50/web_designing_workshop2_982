@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Calculator</h2>
+
+<input type="number" id="num1">
+<input type="number" id="num2">
+
+<button onclick="calculate()">Calculate</button>
+
+<p id="result"></p>
+
+<script>
+function calculate() {
+    var a = Number(document.getElementById("num1").value);
+    var b = Number(document.getElementById("num2").value);
+
+    var sum = a + b;
+    var diff = a - b;
+    var product = a * b;
+
+    document.getElementById("result").innerHTML =
+        "Sum = " + sum + "<br>" +
+        "Difference = " + diff + "<br>" +
+        "Product = " + product;
+}
+</script>
+
+</body>
+</html>
