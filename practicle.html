@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Grade Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        input {
+            padding: 8px;
+            margin: 5px;
+            width: 100px;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin-top: 10px;
+        }
+
+        #result {
+            margin-top: 20px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Grade Calculator</h2>
+
+    <input type="number" id="sub1" placeholder="Subject 1"><br>
+    <input type="number" id="sub2" placeholder="Subject 2"><br>
+    <input type="number" id="sub3" placeholder="Subject 3"><br>
+    <input type="number" id="sub4" placeholder="Subject 4"><br>
+
+    <button onclick="calculate()">Calculate</button>
+
+    <div id="result"></div>
+
+    <script>
+        function calculate() {
+            let total = 0;
+
+            for (let i = 1; i <= 4; i++) {
+                total += Number(document.getElementById("sub" + i).value);
+            }
+
+            let avg = total / 4;
+            let grade;
+
+            if (avg >= 90)
+                grade = "A+";
+            else if (avg >= 80)
+                grade = "A";
+            else if (avg >= 70)
+                grade = "B";
+            else if (avg >= 60)
+                grade = "C";
+            else if (avg >= 50)
+                grade = "D";
+            else
+                grade = "F";
+
+            document.getElementById("result").innerHTML =
+                "Total Marks = " + total +
+                "<br>Average = " + avg.toFixed(2) +
+                "<br>Grade = " + grade;
+        }
+    </script>
+
+</body>
+</html>
